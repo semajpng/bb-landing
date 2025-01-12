@@ -98,17 +98,15 @@
     <body style="background-color: #eeeeee">
         <div class="container">
             <div class="title fjalla-one-regular">
-                <h1>At the end of the day, we are all beige inside.</h1>
+                <h1 id="title"></h1>
             </div>
         </div>
         <div class="container">
             <img id="main-pic" src="public/beigekb.png">
         </div>
         <div class="container">
-            <div class="copy ibm-plex-sans-condensed-light">
-                Once upon a time, keyboards were one color. <br>Ok maybe two, or three, but you bet one of those were black. 
-                <br>The others? Beige. Creamy L9 paired with rich, velvety U9.
-                <br>Timeless, classic, even your grandparents will approve.
+            <div class="copy ibm-plex-sans-condensed-light" id="copy">
+                
             </div>
         </div>
         <div class="container">
@@ -117,6 +115,27 @@
 
     </body>
     <script>
+        var copies = 0;
+        var selector = 0;
+
+        var displayTitle = document.getElementById("title");
+        var displayCopy = document.getElementById("copy");
+
+        const title = [
+            "At the end of the day, we are all beige inside.",
+            "B is for Beige.<br>Big Beige."
+        ]
+
+        const copy = [
+            "Once upon a time, keyboards were one color. Ok maybe two, or three, but you bet one of those were black. The others? Beige. Creamy L9 paired with rich, velvety U9.<br>Timeless, classic, even your grandparents will approve.",
+            "It's the first set you should have when owning a custom keyboard. Discover the spcial thrill of beige keycaps - with big beige. Call for the one nearest you and experience beige, today."
+        ]
+
+        copies = title.length;
+        selector = Math.floor(Math.random() * copies);
+        displayTitle.innerHTML = title[selector];
+        displayCopy.innerHTML = copy[selector];
+
 
 
     </script>
